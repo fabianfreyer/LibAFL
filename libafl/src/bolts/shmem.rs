@@ -822,11 +822,12 @@ pub mod win32_shmem {
     use crate::{
         bolts::{
             bindings::{
-                windows::win32::system_services::{
-                    CreateFileMappingA, MapViewOfFile, OpenFileMappingA, UnmapViewOfFile,
+                Windows::Win32::System::{
+                    Memory::{MapViewOfFile, UnmapViewOfFile },
+                    SystemServices::{CreateFileMappingA, OpenFileMappingA}
                 },
-                windows::win32::system_services::{BOOL, HANDLE, PAGE_TYPE, PSTR},
-                windows::win32::windows_programming::CloseHandle,
+                Windows::Win32::System::SystemServices::{BOOL, HANDLE, PAGE_TYPE, PSTR},
+                Windows::Win32::System::WindowsProgramming::CloseHandle,
             },
             shmem::{ShMem, ShMemId, ShMemProvider},
         },

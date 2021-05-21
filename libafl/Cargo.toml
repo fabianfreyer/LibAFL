@@ -45,6 +45,7 @@ llmp_compression = [] # llmp compression using GZip
 llmp_debug = ["backtrace"] # Enables debug output for LLMP
 llmp_small_maps = [] # reduces initial map size for llmp
 introspection = [] # Include performance statistics of the fuzzing pipeline
+simd = ["packed_simd"] # Use SIMD instructions
 
 [[example]]
 name = "llmp_test"
@@ -65,6 +66,7 @@ ctor = "0.1.20"
 serde_json = { version = "1.0", optional = true, default-features = false, features = ["alloc"] } # an easy way to debug print SerdeAnyMap
 compression = { version = "0.1.5" }
 core_affinity = { version = "0.5", git = "https://github.com/s1341/core_affinity_rs" }
+packed_simd = { version = "0.3.4", package = "packed_simd_2" }
 num_enum = "0.5.1"
 hostname = "^0.3" # Is there really no gethostname in the stdlib?
 typed-builder = "0.9.0"

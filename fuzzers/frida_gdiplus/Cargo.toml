@@ -25,7 +25,6 @@ reqwest = { version = "0.11.4", features = ["blocking"] }
 
 [dependencies]
 libafl = { path = "../../libafl/", features = [ "std", "llmp_compression", "llmp_bind_public", "frida_cli" ] } #,  "llmp_small_maps", "llmp_debug"]}
-capstone = "0.11.0"
 frida-gum = { version = "0.8.1", features = [ "auto-download", "event-sink", "invocation-listener"] }
 libafl_frida = { path = "../../libafl_frida", features = ["cmplog"] }
 libafl_targets = { path = "../../libafl_targets", features = ["sancov_cmplog"] }
@@ -39,3 +38,8 @@ mimalloc = { version = "*", default-features = false }
 
 backtrace = "0.3"
 color-backtrace = "0.5"
+
+[dependencies.capstone]
+git = "https://github.com/domenukk/capstone-rs.git"
+branch = "frida-cs"
+features = ["frida"]

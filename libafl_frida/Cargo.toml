@@ -27,11 +27,8 @@ libc = "0.2"
 hashbrown = "0.12"
 libloading = "0.7"
 rangemap = "1.0"
-frida-gum-sys = { version = "0.6.0", features = [ "auto-download", "event-sink", "invocation-listener"] }
-frida-gum = { version = "0.10.0", features = [ "auto-download", "event-sink", "invocation-listener"] }
 regex = "1"
 dynasmrt = "1.2"
-capstone = "0.11.0"
 color-backtrace ={ version = "0.5", features = [ "resolve-modules" ] }
 termcolor = "1.1.3"
 serde = "1.0"
@@ -39,6 +36,21 @@ backtrace = { version = "0.3", default-features = false, features = ["std", "ser
 num-traits = "0.2"
 ahash = "0.7"
 paste = "1.0"
+
+[dependencies.frida-gum]
+git = "https://github.com/fabianfreyer/frida-rust/"
+branch = "feat/capstone-fork"
+features = [ "auto-download", "event-sink", "invocation-listener"]
+
+[dependencies.frida-gum-sys]
+git = "https://github.com/fabianfreyer/frida-rust/"
+branch = "feat/capstone-fork"
+features = [ "auto-download", "event-sink", "invocation-listener"]
+
+[dependencies.capstone]
+git = "https://github.com/domenukk/capstone-rs.git"
+branch = "frida-cs"
+features = ["frida"]
 
 [dev-dependencies]
 serial_test = "1"

@@ -48,10 +48,14 @@ strum_macros = "0.24"
 syscall-numbers = "3.0"
 meminterval = "0.3"
 thread_local = "1.1.4"
-capstone = "0.11.0"
 #pyo3 = { version = "0.15", features = ["extension-module"], optional = true }
 pyo3 = { version = "0.17", features = ["pyproto"], optional = true }
 rangemap = "1.0"
+
+[dependencies.capstone]
+git = "https://github.com/domenukk/capstone-rs.git"
+branch = "frida-cs"
+features = ["frida"]
 
 [build-dependencies]
 pyo3-build-config = { version = "0.15", optional = true }
